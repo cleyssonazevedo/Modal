@@ -12,7 +12,7 @@ export class AppComponent {
   public open = false;
   public lang: Language;
 
-  constructor (private translate: TranslateService, private language: LanguageService) {
+  constructor (public translate: TranslateService, private language: LanguageService) {
     this.language.getLang().subscribe((lang) => this.translate.setDefaultLang(lang.toString())).unsubscribe();
 
     this.language.getLang().subscribe((lang) => {
