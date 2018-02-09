@@ -1,0 +1,11 @@
+<div class="modal" [class.hide]="!open" (click)="close()">
+  <div class="modal-content" [@flyInOut]="open ? 'active': 'inactive'">
+    <div class="modal-title" *ngIf="title">
+      <h4>{{ title }}</h4>
+    </div>
+
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
