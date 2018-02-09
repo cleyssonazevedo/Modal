@@ -24,16 +24,11 @@ import { LanguageService } from '../../service/language.service';
   ]
 })
 export class ModalComponent {
+  @Input('open')
   public open: boolean;
 
-  @Input('open')
-  set SetOpen(open: boolean) {
-    this.open = open;
-    console.log(open);
-  }
-
   @Output()
-  public getOpen = new EventEmitter<boolean>();
+  public openChange = new EventEmitter<boolean>();
 
   @Input()
   public title: string;
@@ -44,6 +39,6 @@ export class ModalComponent {
   }
 
   close() {
-    this.getOpen.emit(false);
+    this.openChange.emit(false);
   }
 }

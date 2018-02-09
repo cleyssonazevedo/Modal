@@ -1,8 +1,9 @@
 <div class="container">
   <button type="button" (click)="open = !open">{{ 'Aberto' | translate }}</button>
-  <button type="button" (click)="changeLanguage(lang)">{{ lang }}</button>
+  <button type="button" (click)="changeLanguage(lang)">{{ lang | uppercase }}</button>
+
 </div>
 
-<app-modal [open]="open" (getOpen)="open = $event" [title]="'Testando'">
+<app-modal [(open)]="open" [title]="'Testando'">
   {{ 'Conteúdo' | translate }}
 </app-modal>
